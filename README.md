@@ -13,16 +13,8 @@ It will create the "xastir-qt" executable in the "build" directory.
 
 `$ cd callpass`
 
-`$ ./bootstrap.sh`
+`$ ./build.sh`
 
-`$ mkdir -p build`
-
-`$ cd build`
-
-`$ ./configure`
-
-`$ make`
-
-It will create the "callpass" executable in the "build" directory. Use it by typing "./callpass <callsign>" to get your passcode for Xastir.
+It will create the "callpass" executable in the "build" directory. Go into the build directory and type "./callpass <callsign>" to get your passcode for Xastir.
 
 
