@@ -1,1 +1,37 @@
+# For release branches, the following files should be removed from
+# the branch's gitignore.  They are produced by bootstrap, and should *NOT*
+# be ignored on release branches, only development branches:
+#-----
+Makefile.in
+aclocal.m4
+autom4te.cache
+compile
+config.guess
+config.h.in
+config.sub
+configure
+depcomp
+install-sh
+missing
+#-----
+#Everything from here down should be left alone, and make us ignore
+# configure and build artifacts.  They should be ignored on all branches:
+*~
+*.swp
+*.o
 build
+devel
+make.log
+.deps
+autom4te-2.53.cache
+Makefile
+nwr
+stamp-h.in
+config.h
+config.log
+config.status
+summary.log
+stamp-h1
+config/tnc-startup.def
+callpass/callpass
+
