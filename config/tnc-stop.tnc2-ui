@@ -1,0 +1,11 @@
+#
+# Copyright (C) 2000-2018 The Xastir Group
+#
+# This is the TNC Startup file for the TNC2-UI TNC.
+# lines that begin with a pound sign are comments.
+
+MONITOR OFF
+LF ON
+ECHO ON
+MONITOR ON
+
