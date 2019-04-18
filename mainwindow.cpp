@@ -87,7 +87,12 @@ void MainWindow::newData (PacketInterface *device, QString data)
     QString tmp;
 
 
-    packetDisplay.append(device->deviceName() + "-> " + data + "\n");
+    // Best here would be to look for CR or LF in "data", remove, then add "\n".
+    // We're not doing that yet.
+    //
+    // packetDisplay.append(device->deviceName() + "-> " + data + "\n");
+    packetDisplay.append(device->deviceName() + "-> " + data);
+
 
     if (total_lines >= max_lines) {
         int ii = packetDisplay.indexOf("\n");
