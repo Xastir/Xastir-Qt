@@ -12,7 +12,9 @@
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
-#include <QtGui/QApplication>
+// #include <QtGui/QApplication>
+#include <QtGui>
+#include <QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCheckBox>
 #include <QtGui/QDialogButtonBox>
@@ -31,7 +33,9 @@
 #include <QtGui/QToolButton>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
-
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>
+#endif
 QT_BEGIN_NAMESPACE
 
 class Ui_MainWindow
