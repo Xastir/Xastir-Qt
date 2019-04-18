@@ -70,17 +70,6 @@ XASTIR_COMPILER_FLAGS
 #AC_DEFINE(_REENTRANT, 1, [Use reentrant code if available.]) 
 AC_DEFINE_UNQUOTED(STIPPLE, 1, [Legacy stuff, use crowbar and lets keep going]) 
 
-# Checks for libraries. 
-# 
-# 
-# Find the X11 include and library directories. 
-# 
-
-CPPFLAGS="$CPPFLAGS $X_CFLAGS" 
-LDFLAGS="$LDFLAGS $X_LIBS"
-LIBS="$LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
-
-
 # Check for endian 
 AC_C_BIGENDIAN 
  
