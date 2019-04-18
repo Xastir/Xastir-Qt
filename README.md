@@ -8,6 +8,8 @@ More to come as we get to work on this project.
 
 It will create the "xastir-qt" executable in the "build" directory.
 
+Note: You may need to edit "build.sh" for OpenSuSE Linux. Change "qmake" to "qmake-qt5".
+
 
 **Building the callpass executable on Linux:**
 
