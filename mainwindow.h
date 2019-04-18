@@ -12,7 +12,6 @@
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
-// #include <QtGui/QApplication>
 #include <QtGui>
 #include <QApplication>
 #include <QtGui/QButtonGroup>
