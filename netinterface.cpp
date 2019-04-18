@@ -164,7 +164,7 @@ void NetInterface::nowConnected()
     else {
         loginStr = "user " + callsign + " pass " + passcode + " vers XASTIR-QT 0.1 \r\n";
     }
-    tcpSocket.write( loginStr.toAscii().data() );
+    tcpSocket.write( loginStr.toLatin1().data() );
 
     // Update interface status
     deviceState = DEVICE_UP;

@@ -21,7 +21,11 @@
  * Look at the README for more information on the program.
  */
 
-#include <QtGui/QApplication>
+#include <QtGui>
+#include <QApplication>
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>
+#endif
 #include "xastir.h"
 
 int main(int argc, char *argv[])
