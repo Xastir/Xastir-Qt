@@ -14,16 +14,14 @@ matrix:
       addons:
         apt:
           packages:
-            - libQt4Core-devel
-            - libqt4-qtbase-common-devel
+            - qtbase4-dev
     - os: linux
       dist: xenial
       name: "Ubuntu 16.04 with Qt5"
       addons:
         apt:
           packages:
-            - libQt5Core-devel
-            - libqt5-qtbase-common-devel
+            - qtbase5-dev
     - os: osx
       name: "MacOS with Qt5"
       addons:
