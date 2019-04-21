@@ -1,8 +1,9 @@
 language: c++
 
 script:
-  - ./bootstrap.sh
-  - ./configure CPPFLAGS="-I/usr/include/geotiff"
+  - mkdir -p build
+  - cd build
+  - qmake ../xastir-qt.pro
   - make
   - sudo make install
 
