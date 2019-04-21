@@ -1,0 +1,31 @@
+language: c++
+
+script:
+  - ./bootstrap.sh
+  - ./configure CPPFLAGS="-I/usr/include/geotiff"
+  - make
+  - sudo make install
+
+matrix:
+  include:
+    - os: linux
+      name: "Linux with Qt4"
+      addons:
+        apt:
+          packages:
+            - libQt4Core-devel
+    - os: linux
+      dist: xenial
+      name: "Ubuntu 16.04 with Qt5"
+      addons:
+        apt:
+          packages:
+            - libQt5Core-devel
+    - os: osx
+      name: "MacOS with Qt5"
+      addons:
+        homebrew:
+          packages:
+            - libQt5Core-devel
+
+
