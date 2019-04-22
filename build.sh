@@ -2,6 +2,6 @@
 
 mkdir -p build
 cd build
-qmake ../xastir-qt.pro
+qmake-qt5 ../xastir-qt.pro || qmake ../xastir-qt.pro
 make
 
