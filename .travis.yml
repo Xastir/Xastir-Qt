@@ -1,9 +1,7 @@
 language: cpp
 
-before_build:
-- set PATH="/usr/local/opt/qt/bin:$PATH"
-
 script:
+  - export PATH="/usr/local/opt/qt/bin:$PATH"
   - mkdir -p build
   - cd build
   - qmake ../xastir-qt.pro || qmake-qt4 ../xastir-qt.pro || qmake-qt5 ../xastir-qt.pro
