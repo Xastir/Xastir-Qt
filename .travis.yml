@@ -1,11 +1,4 @@
-language: c++
-
-script:
-  - mkdir -p build
-  - cd build
-  - qmake ../xastir-qt.pro || qmake-qt4 ../xastir-qt.pro || qmake-qt5 ../xastir-qt.pro
-  - make
-  - sudo make install
+language: cpp
 
 matrix:
   include:
@@ -24,10 +17,33 @@ matrix:
             - qtbase5-dev
     - os: osx
       name: "OSX with Qt5"
+      compiler: clang
+      env:
+	- QT_BASE=57
       addons:
         homebrew:
           packages:
             - qt5
             - brew link qt5 --force
+
+before_install:
+  - if [[ "$QT_BASE" = "57" && "$TRAVIS_OS_NAME" = "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt571-trusty -y; fi
+
+install:
+  - if [ "$QT_BASE" = "57" ]; then
+      if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
+        sudo apt-get install -qq qt57base; source /opt/qt57/bin/qt57-env.sh; 
+      else
+        brew install qt5;
+        brew link --force qt5;
+      fi
+    fi
+
+script:
+  - mkdir -p build
+  - cd build
+  - qmake ../xastir-qt.pro || qmake-qt4 ../xastir-qt.pro || qmake-qt5 ../xastir-qt.pro
+  - make
+  - sudo make install
 
 
