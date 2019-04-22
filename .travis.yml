@@ -28,5 +28,6 @@ matrix:
         homebrew:
           packages:
             - qt5
+            - link qt5 --force
 
 
