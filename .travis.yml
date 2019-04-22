@@ -3,6 +3,10 @@ language: cpp
 script:
   - mkdir -p build
   - cd build
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then 
+      sudo apt-get install -qq qt57base; source /opt/qt57/bin/qt57-env.sh; 
+    fi
+  - echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash_profile
   - qmake ../xastir-qt.pro || qmake-qt4 ../xastir-qt.pro || qmake-qt5 ../xastir-qt.pro
   - make
   - sudo make install
@@ -29,6 +33,5 @@ matrix:
         homebrew:
           packages:
             - qt5
-            - brew link qt5 --force
 
 
