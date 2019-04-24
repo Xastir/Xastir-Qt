@@ -9,26 +9,49 @@ script:
   - sudo make install
 
 matrix:
+
+  exclude:
+    - compiler: gcc g++
+
   include:
-    - os: linux
-      name: "Ubuntu 14.04 with Qt4"
-      addons:
-        apt:
-          packages:
-            - qt4-dev-tools
+
+#    - os: linux
+#      name: "Ubuntu 14.04 with Qt4"
+#      addons:
+#        apt:
+#          packages:
+#            - qt4-dev-tools
+
     - os: linux
       dist: xenial
       name: "Ubuntu 16.04 with Qt5"
       addons:
         apt:
+          sources:
+            - llvm-toolchain-xenial-7
+            - ubuntu-toolchain-r-test
           packages:
             - qtbase5-dev
-    - os: osx
-      name: "OSX with Qt5"
-      compiler: clang
-      addons:
-        homebrew:
-          packages:
-            - qt5
+            - g++-8
+      install:
+        - export CXX="g++-8"
+        - echo ${CXX}
+        - ${CXX} --version
+
+#    - os: linux
+#      dist: xenial
+#      name: "Ubuntu 16.04 with Qt5"
+#      addons:
+#        apt:
+#          packages:
+#            - qtbase5-dev
+# 
+#    - os: osx
+#      name: "OSX with Qt5"
+#      compiler: clang
+#      addons:
+#        homebrew:
+#          packages:
+#            - qt5
 
 
