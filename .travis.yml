@@ -11,7 +11,7 @@ script:
 matrix:
 
   exclude:
-    - compiler: gcc g++
+    - compiler: gcc
 
   include:
 
@@ -22,9 +22,17 @@ matrix:
 #          packages:
 #            - qt4-dev-tools
 
+#    - os: linux
+#      dist: xenial
+#      name: "Ubuntu 16.04 with Qt5"
+#      addons:
+#        apt:
+#          packages:
+#            - qtbase5-dev
+ 
     - os: linux
       dist: xenial
-      name: "Ubuntu 16.04 with Qt5"
+      name: "Ubuntu 16.04 with Qt5 and g++-8"
       addons:
         apt:
           sources:
@@ -38,20 +46,12 @@ matrix:
         - echo ${CXX}
         - ${CXX} --version
 
-#    - os: linux
-#      dist: xenial
-#      name: "Ubuntu 16.04 with Qt5"
-#      addons:
-#        apt:
-#          packages:
-#            - qtbase5-dev
-# 
-#    - os: osx
-#      name: "OSX with Qt5"
-#      compiler: clang
-#      addons:
-#        homebrew:
-#          packages:
-#            - qt5
+    - os: osx
+      name: "OSX with Qt5"
+      compiler: clang
+      addons:
+        homebrew:
+          packages:
+            - qt5
 
 
